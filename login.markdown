@@ -1,0 +1,51 @@
+﻿---
+layout: page
+title: Login
+permalink: /login/
+---
+
+# Đăng nhập vào Blog AI 
+
+Chào mừng bạn quay trở lại! Đăng nhập để có thể like, comment và tương tác với các bài viết.
+
+## Đăng nhập
+
+<form action="#" method="POST" class="login-form" id="loginForm">
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+  </div>
+  
+  <div class="form-group">
+    <label for="password">Mật khẩu:</label>
+    <input type="password" id="password" name="password" required placeholder="Mật khẩu của bạn">
+  </div>
+  
+  <div class="form-group">
+    <label>
+      <input type="checkbox" name="remember"> Ghi nhớ đăng nhập
+    </label>
+  </div>
+  
+  <button type="submit" class="login-btn">Đăng nhập </button>
+</form>
+
+## Chưa có tài khoản?
+
+<a href="/register/" class="register-link">Đăng ký tài khoản mới</a>
+
+## Quên mật khẩu?
+
+<a href="/forgot-password/" class="forgot-link">Khôi phục mật khẩu</a>
+
+## Tại sao nên đăng ký tài khoản?
+
+-  **Like bài viết**: Thể hiện sự yêu thích với nội dung
+-  **Bình luận**: Thảo luận và chia sẻ ý kiến
+-  **Lưu bài viết**: Lưu những bài viết yêu thích
+-  **Thông báo**: Nhận thông báo khi có bình luận mới
+-  **Hồ sơ cá nhân**: Quản lý thông tin cá nhân
+
+---
+
+*Đăng nhập để có trải nghiệm tốt nhất trên blog AI!*

@@ -23,6 +23,19 @@ Tôi là Vo Hoang Khang, một người đam mê công nghệ và AI. Tôi viế
 
 Hãy khám phá các bài viết mới nhất của tôi về AI và Machine Learning!
 
+## Tương tác với Blog
+
+<div class="nav-links">
+  <a href="/subscribe/"> Subscribe</a>
+  <a href="/login/"> Login</a>
+  <a href="/register/"> Register</a>
+  <a href="/about/"> About</a>
+</div>
+
 ---
 
 *Theo dõi blog để không bỏ lỡ những bài viết mới nhất!*
+
+<!-- Include CSS and JS -->
+<link rel="stylesheet" href="/assets/custom.css">
+<script src="/assets/blog.js"></script>

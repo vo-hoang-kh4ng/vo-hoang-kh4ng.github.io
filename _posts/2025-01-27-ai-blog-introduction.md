@@ -42,3 +42,32 @@ Hãy theo dõi blog để không bỏ lỡ những bài viết mới nhất về
 ---
 
 *Cảm ơn bạn đã ghé thăm blog của tôi. Hẹn gặp lại trong những bài viết tiếp theo!*
+
+<!-- Post Interactions -->
+<div class="post-interactions">
+  <div class="like-section">
+    <button class="like-btn" id="like-btn-intro" onclick="toggleLike('intro')"></button>
+    <span class="like-count" id="like-count-intro">0</span> lượt thích
+  </div>
+  
+  <div class="comment-section">
+    <h3> Bình luận</h3>
+    <form class="comment-form" id="comment-form-intro">
+      <div class="form-group">
+        <input type="text" id="comment-author-intro" placeholder="Tên của bạn" required>
+      </div>
+      <div class="form-group">
+        <textarea id="comment-text-intro" placeholder="Viết bình luận của bạn..." required></textarea>
+      </div>
+      <button type="submit">Gửi bình luận</button>
+    </form>
+    
+    <div class="comments-list" id="comments-list-intro">
+      <!-- Comments will be loaded here -->
+    </div>
+  </div>
+</div>
+
+<!-- Include CSS and JS -->
+<link rel="stylesheet" href="/assets/custom.css">
+<script src="/assets/blog.js"></script>
