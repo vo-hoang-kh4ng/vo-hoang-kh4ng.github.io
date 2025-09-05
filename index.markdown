@@ -30,12 +30,19 @@ Hãy khám phá các bài viết mới nhất của tôi về AI và Machine Lea
   <a href="/login/"> Login</a>
   <a href="/register/"> Register</a>
   <a href="/about/"> About</a>
+  <a href="/setup/"> Setup Guide</a>
 </div>
+
+## Tính năng tương tác
+
+-  **Bình luận**: Sử dụng Utterances (GitHub Issues)
+-  **Newsletter**: Đăng ký nhận tin mới qua Formspree
+-  **Đăng nhập**: Firebase Auth với Google/GitHub
+-  **Like**: Hệ thống like với Firebase (tùy chọn)
 
 ---
 
 *Theo dõi blog để không bỏ lỡ những bài viết mới nhất!*
 
-<!-- Include CSS and JS -->
+<!-- Include CSS -->
 <link rel="stylesheet" href="/assets/custom.css">
-<script src="/assets/blog.js"></script>

@@ -50,6 +50,15 @@ Hãy đăng ký để nhận những bài viết mới nhất về AI, Machine L
 -  **Bảo mật**: Thông tin của bạn được bảo mật tuyệt đối
 -  **Miễn phí**: Hoàn toàn miễn phí
 
+## Các kênh khác
+
+- **RSS Feed**: [Subscribe RSS](/feed.xml)
+- **GitHub**: [Follow trên GitHub](https://github.com/vo-hoang-kh4ng)
+- **LinkedIn**: [Connect trên LinkedIn](https://linkedin.com/in/vo-hoang-khang)
+
 ---
 
 *Cảm ơn bạn đã quan tâm đến blog AI của tôi!*
+
+<!-- Include CSS -->
+<link rel="stylesheet" href="/assets/custom.css">

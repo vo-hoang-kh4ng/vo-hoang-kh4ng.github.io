@@ -6,11 +6,23 @@ permalink: /login/
 
 # Đăng nhập vào Blog AI 
 
-Chào mừng bạn quay trở lại! Đăng nhập để có thể like, comment và tương tác với các bài viết.
+Chào mừng bạn quay trở lại! Đăng nhập để có thể tương tác với các bài viết.
 
-## Đăng nhập
+## Đăng nhập nhanh
 
-<form action="#" method="POST" class="login-form" id="loginForm">
+<div class="social-login">
+  <button class="google-login" onclick="signInWithGoogle()">
+    <i class="fab fa-google"></i> Đăng nhập với Google
+  </button>
+  
+  <button class="github-login" onclick="signInWithGitHub()">
+    <i class="fab fa-github"></i> Đăng nhập với GitHub
+  </button>
+</div>
+
+## Hoặc đăng nhập bằng email
+
+<form class="login-form" id="emailLoginForm">
   <div class="form-group">
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required placeholder="your.email@example.com">
@@ -36,7 +48,7 @@ Chào mừng bạn quay trở lại! Đăng nhập để có thể like, comment
 
 ## Quên mật khẩu?
 
-<a href="/forgot-password/" class="forgot-link">Khôi phục mật khẩu</a>
+<a href="#" onclick="resetPassword()" class="forgot-link">Khôi phục mật khẩu</a>
 
 ## Tại sao nên đăng ký tài khoản?
 
@@ -49,3 +61,11 @@ Chào mừng bạn quay trở lại! Đăng nhập để có thể like, comment
 ---
 
 *Đăng nhập để có trải nghiệm tốt nhất trên blog AI!*
+
+<!-- Firebase Auth -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+
+<!-- Include CSS -->
+<link rel="stylesheet" href="/assets/custom.css">
+<script src="/assets/firebase-auth.js"></script>
