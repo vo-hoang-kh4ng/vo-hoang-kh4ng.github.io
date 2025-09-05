@@ -19,9 +19,23 @@ Tôi là Vo Hoang Khang, một người đam mê công nghệ và AI. Tôi viế
 -  **AI Applications**: Thực tế ứng dụng AI trong cuộc sống
 -  **Data Science**: Data analysis, Visualization
 
-## Bài viết mới nhất
+## Recent Posts
 
-Hãy khám phá các bài viết mới nhất của tôi về AI và Machine Learning!
+<div class="recent-posts">
+  <div class="recent-posts-header">
+    <h2 class="recent-posts-title">Recent Posts</h2>
+    <div class="recent-posts-actions">
+      <svg class="search-icon" onclick="toggleSearch()" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+      <a href="/posts/" class="view-all-link">VIEW ALL</a>
+    </div>
+  </div>
+  
+  <div class="posts-grid" id="postsGrid">
+    <!-- Posts will be loaded here -->
+  </div>
+</div>
 
 ## Tương tác với Blog
 
@@ -30,7 +44,7 @@ Hãy khám phá các bài viết mới nhất của tôi về AI và Machine Lea
   <a href="/login/"> Login</a>
   <a href="/register/"> Register</a>
   <a href="/about/"> About</a>
-  <a href="/setup/"> Setup Guide</a>
+  <a href="/firebase-setup/"> Firebase Setup</a>
 </div>
 
 ## Tính năng tương tác
@@ -40,9 +54,24 @@ Hãy khám phá các bài viết mới nhất của tôi về AI và Machine Lea
 -  **Đăng nhập**: Firebase Auth với Google/GitHub
 -  **Like**: Hệ thống like với Firebase (tùy chọn)
 
+## UI/UX Features
+
+-  **Modern Design**: Thiết kế hiện đại với gradient và animations
+-  **Responsive**: Tối ưu cho mọi thiết bị
+-  **Fast Loading**: Tối ưu performance
+-  **Secure**: Bảo mật với Firebase Authentication
+
 ---
 
 *Theo dõi blog để không bỏ lỡ những bài viết mới nhất!*
 
-<!-- Include CSS -->
+<!-- Search Bar -->
+<div class="search-bar" id="searchBar">
+  <input type="text" class="search-input" placeholder="Tìm kiếm bài viết..." id="searchInput">
+  <button class="search-close" onclick="toggleSearch()"></button>
+</div>
+
+<!-- Include CSS and JS -->
 <link rel="stylesheet" href="/assets/custom.css">
+<link rel="stylesheet" href="/assets/recent-posts.css">
+<script src="/assets/recent-posts.js"></script>

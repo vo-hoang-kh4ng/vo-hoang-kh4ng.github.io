@@ -11,13 +11,17 @@ Chào mừng bạn quay trở lại! Đăng nhập để có thể tương tác 
 ## Đăng nhập nhanh
 
 <div class="social-login">
-  <button class="google-login" onclick="signInWithGoogle()">
+  <button class="google-login" id="google-login" onclick="signInWithGoogle()">
     <i class="fab fa-google"></i> Đăng nhập với Google
   </button>
   
-  <button class="github-login" onclick="signInWithGitHub()">
+  <button class="github-login" id="github-login" onclick="signInWithGitHub()">
     <i class="fab fa-github"></i> Đăng nhập với GitHub
   </button>
+</div>
+
+<div style="text-align: center; margin: 1.5rem 0; color: var(--ai-gray-500); font-size: 0.875rem;">
+   hoặc 
 </div>
 
 ## Hoặc đăng nhập bằng email
@@ -44,11 +48,11 @@ Chào mừng bạn quay trở lại! Đăng nhập để có thể tương tác 
 
 ## Chưa có tài khoản?
 
-<a href="/register/" class="register-link">Đăng ký tài khoản mới</a>
+<a href="/register/" class="register-link" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: var(--ai-gray-100); color: var(--ai-gray-700); text-decoration: none; border-radius: 8px; transition: all 0.3s ease;">Đăng ký tài khoản mới</a>
 
 ## Quên mật khẩu?
 
-<a href="#" onclick="resetPassword()" class="forgot-link">Khôi phục mật khẩu</a>
+<a href="#" onclick="resetPassword()" class="forgot-link" style="display: inline-block; margin-top: 0.5rem; color: var(--ai-primary); text-decoration: none;">Khôi phục mật khẩu</a>
 
 ## Tại sao nên đăng ký tài khoản?
 
@@ -62,10 +66,11 @@ Chào mừng bạn quay trở lại! Đăng nhập để có thể tương tác 
 
 *Đăng nhập để có trải nghiệm tốt nhất trên blog AI!*
 
-<!-- Firebase Auth -->
+<!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
 
-<!-- Include CSS -->
+<!-- Include CSS and JS -->
 <link rel="stylesheet" href="/assets/custom.css">
 <script src="/assets/firebase-auth.js"></script>

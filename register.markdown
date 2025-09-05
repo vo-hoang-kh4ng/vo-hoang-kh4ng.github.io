@@ -8,9 +8,25 @@ permalink: /register/
 
 Chào mừng bạn đến với Blog AI! Đăng ký tài khoản để có thể tương tác đầy đủ với các bài viết.
 
-## Đăng ký tài khoản
+## Đăng ký nhanh
 
-<form action="#" method="POST" class="register-form" id="registerForm">
+<div class="social-login">
+  <button class="google-login" id="google-login" onclick="signInWithGoogle()">
+    <i class="fab fa-google"></i> Đăng ký với Google
+  </button>
+  
+  <button class="github-login" id="github-login" onclick="signInWithGitHub()">
+    <i class="fab fa-github"></i> Đăng ký với GitHub
+  </button>
+</div>
+
+<div style="text-align: center; margin: 1.5rem 0; color: var(--ai-gray-500); font-size: 0.875rem;">
+   hoặc 
+</div>
+
+## Hoặc đăng ký bằng email
+
+<form class="register-form" id="registerForm">
   <div class="form-group">
     <label for="name">Họ và tên:</label>
     <input type="text" id="name" name="name" required placeholder="Họ và tên của bạn">
@@ -23,7 +39,7 @@ Chào mừng bạn đến với Blog AI! Đăng ký tài khoản để có thể
   
   <div class="form-group">
     <label for="password">Mật khẩu:</label>
-    <input type="password" id="password" name="password" required placeholder="Mật khẩu mạnh">
+    <input type="password" id="password" name="password" required placeholder="Mật khẩu mạnh (ít nhất 6 ký tự)">
   </div>
   
   <div class="form-group">
@@ -45,7 +61,7 @@ Chào mừng bạn đến với Blog AI! Đăng ký tài khoản để có thể
   
   <div class="form-group">
     <label>
-      <input type="checkbox" name="terms" required> Tôi đồng ý với <a href="/terms/" target="_blank">Điều khoản sử dụng</a>
+      <input type="checkbox" name="terms" required> Tôi đồng ý với <a href="/terms/" target="_blank" style="color: var(--ai-primary);">Điều khoản sử dụng</a>
     </label>
   </div>
   
@@ -60,7 +76,7 @@ Chào mừng bạn đến với Blog AI! Đăng ký tài khoản để có thể
 
 ## Đã có tài khoản?
 
-<a href="/login/" class="login-link">Đăng nhập tại đây</a>
+<a href="/login/" class="login-link" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: var(--ai-gray-100); color: var(--ai-gray-700); text-decoration: none; border-radius: 8px; transition: all 0.3s ease;">Đăng nhập tại đây</a>
 
 ## Lợi ích khi đăng ký
 
@@ -73,3 +89,12 @@ Chào mừng bạn đến với Blog AI! Đăng ký tài khoản để có thể
 ---
 
 *Chào mừng bạn đến với cộng đồng AI!*
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+
+<!-- Include CSS and JS -->
+<link rel="stylesheet" href="/assets/custom.css">
+<script src="/assets/firebase-auth.js"></script>
