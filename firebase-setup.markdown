@@ -1,143 +1,178 @@
 ﻿---
 layout: page
-title: Firebase Setup Guide
+title: Hướng dẫn Setup Firebase Authentication
 permalink: /firebase-setup/
 ---
 
-# Hướng dẫn Setup Firebase cho Blog AI 
+# Hướng dẫn Setup Firebase Authentication cho Blog AI
 
-Đây là hướng dẫn chi tiết để setup Firebase Authentication cho blog AI của bạn.
+## Tổng quan
+
+Firebase Authentication cho phép người dùng đăng nhập vào blog bằng Google hoặc email/password một cách an toàn và dễ dàng.
 
 ## Bước 1: Tạo Firebase Project
 
 ### 1.1 Truy cập Firebase Console
-1. Đi đến [Firebase Console](https://console.firebase.google.com)
-2. Click "Create a project" hoặc "Add project"
-3. Nhập tên project: i-blog-vo-hoang-kh4ng (hoặc tên bạn muốn)
-4. Chọn "Enable Google Analytics" (tùy chọn)
-5. Click "Create project"
+1. Vào [Firebase Console](https://console.firebase.google.com/)
+2. Đăng nhập bằng tài khoản Google
+3. Click **"Add Project"** hoặc **"Tạo dự án"**
 
 ### 1.2 Cấu hình Project
-1. Chọn region: sia-southeast1 (Singapore) - gần Việt Nam nhất
-2. Chọn Analytics account (nếu có)
-3. Click "Create project"
-4. Đợi project được tạo (1-2 phút)
+- **Tên project**: o-hoang-kh4ng-blog (hoặc tên bạn muốn)
+- **Chọn location**: sia-southeast1 (Singapore)
+- **Google Analytics**: Có thể bật hoặc tắt
+- Click **"Create project"**
 
-## Bước 2: Setup Authentication
+## Bước 2: Thêm Web App
 
-### 2.1 Enable Authentication
-1. Trong Firebase Console, click "Authentication" ở sidebar
-2. Click "Get started"
-3. Chọn tab "Sign-in method"
-4. Enable các phương thức đăng nhập:
+### 2.1 Đăng ký Web App
+1. Trong Firebase Console, click biểu tượng **Web** (</>)
+2. **App nickname**: o-hoang-kh4ng-blog-web
+3. **Firebase Hosting**: Có thể bật nếu muốn
+4. Click **"Register app"**
 
-#### Google Sign-in:
-1. Click "Google" 
-2. Toggle "Enable"
-3. Chọn "Project support email" (email của bạn)
-4. Click "Save"
+### 2.2 Lưu Firebase Config
+Sau khi tạo app, Firebase sẽ hiển thị config code. **Lưu lại** thông tin này:
 
-#### GitHub Sign-in:
-1. Click "GitHub"
-2. Toggle "Enable"
-3. Tạo GitHub OAuth App:
-   - Đi đến [GitHub Settings > Developer settings > OAuth Apps](https://github.com/settings/developers)
-   - Click "New OAuth App"
-   - Application name: AI Blog Auth
-   - Homepage URL: https://vo-hoang-kh4ng.github.io
-   - Authorization callback URL: https://ai-blog-vo-hoang-kh4ng.firebaseapp.com/__/auth/handler
-   - Click "Register application"
-   - Copy Client ID và Client Secret
-4. Paste Client ID và Client Secret vào Firebase
-5. Click "Save"
-
-#### Email/Password:
-1. Click "Email/Password"
-2. Toggle "Enable" cho cả 2 options
-3. Click "Save"
-
-## Bước 3: Setup Firestore Database
-
-### 3.1 Tạo Database
-1. Click "Firestore Database" ở sidebar
-2. Click "Create database"
-3. Chọn "Start in test mode" (cho development)
-4. Chọn location: sia-southeast1
-5. Click "Done"
-
-## Bước 4: Lấy Firebase Config
-
-### 4.1 Project Settings
-1. Click gear icon () > "Project settings"
-2. Scroll xuống "Your apps" section
-3. Click "Web app" icon (</>)
-4. Nhập app nickname: AI Blog Web
-5. Check "Also set up Firebase Hosting" (tùy chọn)
-6. Click "Register app"
-
-### 4.2 Copy Config
-Sao chép config object và thay thế trong ssets/firebase-auth.js
-
-## Bước 5: Cập nhật Code
-
-### 5.1 Cập nhật Firebase Config
-Mở file ssets/firebase-auth.js và thay thế config với thông tin thực tế từ Firebase Console.
-
-### 5.2 Test Authentication
-1. Mở trang /login/ trên blog
-2. Thử đăng nhập với Google
-3. Kiểm tra console để xem có lỗi không
-4. Kiểm tra Firebase Console > Authentication > Users
-
-## Bước 6: Cấu hình Domain (Production)
-
-### 6.1 Authorized Domains
-1. Trong Firebase Console > Authentication > Settings
-2. Scroll xuống "Authorized domains"
-3. Thêm domain: o-hoang-kh4ng.github.io
-4. Click "Add domain"
-
-## Bước 7: Deploy và Test
-
-### 7.1 Commit Changes
-`ash
-git add .
-git commit -m "Add Firebase Authentication"
-git push origin main
+`javascript
+const firebaseConfig = {
+  apiKey: "your-api-key",
+  authDomain: "your-project.firebaseapp.com",
+  projectId: "your-project-id",
+  storageBucket: "your-project.appspot.com",
+  messagingSenderId: "123456789",
+  appId: "your-app-id"
+};
 `
 
-### 7.2 Test Production
-1. Đợi GitHub Pages deploy (2-3 phút)
-2. Truy cập https://vo-hoang-kh4ng.github.io/login/
-3. Test đăng nhập với Google/GitHub
-4. Kiểm tra user data trong Firestore
+## Bước 3: Cấu hình Authentication
 
-## Troubleshooting
+### 3.1 Bật Google Sign-in
+1. Vào **Authentication** > **Sign-in method**
+2. Click **Google** provider
+3. **Enable** Google sign-in
+4. **Project support email**: Nhập email của bạn
+5. Click **Save**
+
+### 3.2 Cấu hình Authorized Domains
+1. Vào **Authentication** > **Settings** > **Authorized domains**
+2. Thêm các domain sau:
+   - o-hoang-kh4ng.github.io
+   - localhost (để test local)
+
+## Bước 4: Cập nhật Firebase Config
+
+### 4.1 Mở file ssets/firebase-auth.js
+Tìm dòng:
+`javascript
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  // ...
+};
+`
+
+### 4.2 Thay thế bằng config thực
+Thay thế các giá trị YOUR_API_KEY, YOUR_PROJECT_ID, etc. bằng giá trị từ Firebase Console.
+
+## Bước 5: Test Authentication
+
+### 5.1 Test Local
+1. Chạy undle exec jekyll serve
+2. Vào http://localhost:4000/login/
+3. Thử đăng nhập bằng Google
+
+### 5.2 Test Production
+1. Commit và push code lên GitHub
+2. Vào https://vo-hoang-kh4ng.github.io/login/
+3. Thử đăng nhập bằng Google
+
+## Bước 6: Troubleshooting
 
 ### Lỗi thường gặp:
 
-#### 1. "Firebase chưa được khởi tạo"
-- Kiểm tra Firebase SDK đã load chưa
-- Kiểm tra config có đúng không
-- Kiểm tra console có lỗi JavaScript không
+#### 1. "Firebase SDK chưa được load"
+- Kiểm tra script tags trong login.markdown
+- Đảm bảo Firebase scripts được load trước irebase-auth.js
 
-#### 2. "Popup bị chặn"
-- Cho phép popup cho domain
-- Thử đăng nhập lại
-- Kiểm tra ad blocker
+#### 2. "This domain is not authorized"
+- Kiểm tra Authorized domains trong Firebase Console
+- Thêm domain o-hoang-kh4ng.github.io
 
-#### 3. "Domain không được authorize"
-- Thêm domain vào Firebase Console
-- Kiểm tra OAuth redirect URIs
-- Đợi 5-10 phút để config có hiệu lực
+#### 3. "Invalid API key"
+- Kiểm tra lại API key trong irebase-auth.js
+- Đảm bảo copy đúng từ Firebase Console
+
+#### 4. "Google sign-in không hoạt động"
+- Kiểm tra Google provider đã được enable
+- Kiểm tra OAuth consent screen trong Google Cloud Console
+
+## Bước 7: Cấu hình OAuth Consent Screen (Nếu cần)
+
+### 7.1 Truy cập Google Cloud Console
+1. Vào [Google Cloud Console](https://console.cloud.google.com/)
+2. Chọn project Firebase của bạn
+3. Vào **APIs & Services** > **OAuth consent screen**
+
+### 7.2 Cấu hình OAuth
+1. **User Type**: External
+2. **App name**: Vo Hoang Khang AI Blog
+3. **User support email**: Email của bạn
+4. **Developer contact**: Email của bạn
+5. **Scopes**: Thêm email và profile
+
+## Bước 8: Deploy và Test
+
+### 8.1 Commit và Push
+`ash
+git add .
+git commit -m "Setup Firebase Authentication"
+git push origin main
+`
+
+### 8.2 Kiểm tra Production
+1. Đợi GitHub Pages build (2-3 phút)
+2. Vào https://vo-hoang-kh4ng.github.io/login/
+3. Test đăng nhập bằng Google
+
+## Tính năng có sẵn
+
+Sau khi setup xong, blog sẽ có:
+
+###  Đăng nhập bằng Google
+- Một click đăng nhập
+- Tự động lấy thông tin profile
+- Avatar và tên hiển thị
+
+###  Đăng nhập bằng Email/Password
+- Tạo tài khoản mới
+- Đăng nhập với email/password
+- Validation form
+
+###  Quản lý Session
+- Tự động đăng nhập khi quay lại
+- Đăng xuất an toàn
+- State management
+
+###  UI/UX hiện đại
+- Responsive design
+- Loading states
+- Error handling
+- Smooth animations
+
+## Hỗ trợ
+
+Nếu gặp vấn đề, hãy:
+
+1. Kiểm tra Console trong Developer Tools
+2. Xem lại các bước setup
+3. Tham khảo [Firebase Documentation](https://firebase.google.com/docs/auth/web/start)
+4. Liên hệ qua GitHub Issues
 
 ---
 
-*Nếu gặp vấn đề, hãy tạo issue trên GitHub repository!*
-
-## Quick Links
-
-- [Firebase Console](https://console.firebase.google.com)
-- [Firebase Auth Docs](https://firebase.google.com/docs/auth)
-- [Firestore Docs](https://firebase.google.com/docs/firestore)
-- [GitHub OAuth Apps](https://github.com/settings/developers)
+**Lưu ý**: Đây là hướng dẫn cơ bản. Trong production, bạn nên:
+- Sử dụng environment variables cho config
+- Implement proper error handling
+- Add security rules
+- Monitor authentication events
