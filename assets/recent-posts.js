@@ -1,9 +1,20 @@
-﻿// Recent Posts JavaScript
+﻿// Recent Posts JavaScript - Updated with new post
 
 // Sample posts data - In production, this would come from Jekyll
 const samplePosts = [
   {
     id: 1,
+    title: "Từ GPT-2 đến GPT-4: Phân tích sự tiến hóa kiến trúc LLM",
+    subtitle: "Khám phá sự tiến hóa của kiến trúc Large Language Models từ GPT-2 đến GPT-4",
+    date: "JAN 28",
+    author: "VO HOANG KHANG",
+    thumbnail: "/assets/images/gpt-evolution-chart.svg",
+    tags: ["llm-architecture", "gpt-4", "transformer", "research"],
+    url: "/2025/01/28/gpt-evolution-analysis/",
+    featured: true
+  },
+  {
+    id: 2,
     title: "Machine Learning cơ bản - Bắt đầu từ đâu?",
     subtitle: "Hướng dẫn chi tiết về Machine Learning với Python và Scikit-learn",
     date: "JAN 27",
@@ -11,10 +22,10 @@ const samplePosts = [
     thumbnail: "/assets/images/ml-basics.jpg",
     tags: ["machine-learning", "python", "tutorial"],
     url: "/2025/01/27/machine-learning-basics/",
-    featured: true
+    featured: false
   },
   {
-    id: 2,
+    id: 3,
     title: "Deep Learning với TensorFlow - Hướng dẫn từ A đến Z",
     subtitle: "Tìm hiểu về Neural Networks, CNN, RNN và các ứng dụng thực tế",
     date: "JAN 27",
@@ -25,20 +36,9 @@ const samplePosts = [
     featured: false
   },
   {
-    id: 3,
-    title: "Chào mừng đến với Blog AI của tôi",
-    subtitle: "Giới thiệu về blog AI và những gì bạn sẽ tìm thấy ở đây",
-    date: "JAN 27",
-    author: "VO HOANG KHANG",
-    thumbnail: "/assets/images/ai-blog.jpg",
-    tags: ["ai", "introduction", "blog"],
-    url: "/2025/01/27/ai-blog-introduction/",
-    featured: false
-  },
-  {
     id: 4,
-    title: "Computer Vision với OpenCV",
-    subtitle: "Xử lý ảnh và video với Python và OpenCV",
+    title: "Computer Vision với OpenCV - Xử lý ảnh thông minh",
+    subtitle: "Hướng dẫn sử dụng OpenCV để xử lý ảnh và video một cách thông minh",
     date: "JAN 26",
     author: "VO HOANG KHANG",
     thumbnail: "/assets/images/computer-vision.jpg",
@@ -49,7 +49,7 @@ const samplePosts = [
   {
     id: 5,
     title: "Natural Language Processing với NLTK",
-    subtitle: "Xử lý ngôn ngữ tự nhiên và phân tích văn bản",
+    subtitle: "Xử lý ngôn ngữ tự nhiên và phân tích văn bản với Python",
     date: "JAN 25",
     author: "VO HOANG KHANG",
     thumbnail: "/assets/images/nlp.jpg",
@@ -59,6 +59,17 @@ const samplePosts = [
   },
   {
     id: 6,
+    title: "Chào mừng đến với Blog AI của tôi",
+    subtitle: "Giới thiệu về blog AI và những gì bạn sẽ tìm thấy ở đây",
+    date: "JAN 27",
+    author: "VO HOANG KHANG",
+    thumbnail: "/assets/images/ai-blog.jpg",
+    tags: ["ai", "introduction", "blog"],
+    url: "/2025/01/27/ai-blog-introduction/",
+    featured: false
+  },
+  {
+    id: 7,
     title: "Data Science với Pandas và NumPy",
     subtitle: "Phân tích dữ liệu và thống kê với Python",
     date: "JAN 24",
@@ -69,7 +80,7 @@ const samplePosts = [
     featured: false
   },
   {
-    id: 7,
+    id: 8,
     title: "AI trong Y tế - Ứng dụng thực tế",
     subtitle: "Cách AI đang thay đổi ngành y tế và chẩn đoán",
     date: "JAN 23",
@@ -77,17 +88,6 @@ const samplePosts = [
     thumbnail: "/assets/images/ai-healthcare.jpg",
     tags: ["ai-applications", "healthcare", "medical-ai"],
     url: "/2025/01/23/ai-healthcare/",
-    featured: false
-  },
-  {
-    id: 8,
-    title: "Tương lai của AI - Xu hướng 2025",
-    subtitle: "Dự đoán về tương lai của AI và những công nghệ mới",
-    date: "JAN 22",
-    author: "VO HOANG KHANG",
-    thumbnail: "/assets/images/ai-future.jpg",
-    tags: ["ai-trends", "future", "technology"],
-    url: "/2025/01/22/ai-future-2025/",
     featured: false
   }
 ];

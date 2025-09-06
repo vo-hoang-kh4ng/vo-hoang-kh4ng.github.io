@@ -1,0 +1,143 @@
+﻿<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="transformerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="attentionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2d3748">
+    Transformer Architecture
+  </text>
+  
+  <!-- Input Embedding -->
+  <rect x="50" y="80" width="120" height="60" rx="5" fill="url(#transformerGrad)" opacity="0.8"/>
+  <text x="110" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+    Input
+  </text>
+  <text x="110" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    Embedding
+  </text>
+  <text x="110" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    + Position
+  </text>
+  
+  <!-- Positional Encoding -->
+  <rect x="50" y="160" width="120" height="60" rx="5" fill="url(#transformerGrad)" opacity="0.8"/>
+  <text x="110" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+    Positional
+  </text>
+  <text x="110" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    Encoding
+  </text>
+  <text x="110" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    (Learned)
+  </text>
+  
+  <!-- Transformer Block 1 -->
+  <rect x="250" y="80" width="200" height="140" rx="10" fill="white" stroke="#4a5568" stroke-width="2"/>
+  <text x="350" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2d3748">
+    Transformer Block 1
+  </text>
+  
+  <!-- Multi-Head Attention -->
+  <rect x="270" y="120" width="160" height="40" rx="5" fill="url(#attentionGrad)" opacity="0.8"/>
+  <text x="350" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+    Multi-Head Attention
+  </text>
+  <text x="350" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    (Causal Mask)
+  </text>
+  
+  <!-- Add & Norm -->
+  <rect x="270" y="170" width="160" height="30" rx="5" fill="#e2e8f0" stroke="#4a5568" stroke-width="1"/>
+  <text x="350" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">
+    Add & Norm
+  </text>
+  
+  <!-- Transformer Block 2 -->
+  <rect x="250" y="250" width="200" height="140" rx="10" fill="white" stroke="#4a5568" stroke-width="2"/>
+  <text x="350" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2d3748">
+    Transformer Block 2
+  </text>
+  
+  <!-- Feed Forward -->
+  <rect x="270" y="290" width="160" height="40" rx="5" fill="url(#transformerGrad)" opacity="0.8"/>
+  <text x="350" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+    Feed Forward
+  </text>
+  <text x="350" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    (MLP)
+  </text>
+  
+  <!-- Add & Norm -->
+  <rect x="270" y="340" width="160" height="30" rx="5" fill="#e2e8f0" stroke="#4a5568" stroke-width="1"/>
+  <text x="350" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">
+    Add & Norm
+  </text>
+  
+  <!-- Output Layer -->
+  <rect x="500" y="200" width="120" height="60" rx="5" fill="url(#transformerGrad)" opacity="0.8"/>
+  <text x="560" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+    Output
+  </text>
+  <text x="560" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    Projection
+  </text>
+  <text x="560" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    + Softmax
+  </text>
+  
+  <!-- Arrows -->
+  <path d="M 170 110 L 250 150" stroke="#4a5568" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 170 190 L 250 150" stroke="#4a5568" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 350 220 L 350 250" stroke="#4a5568" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 450 320 L 500 230" stroke="#4a5568" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a5568"/>
+    </marker>
+  </defs>
+  
+  <!-- Attention Mechanism Detail -->
+  <rect x="50" y="450" width="700" height="120" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+  <text x="400" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2d3748">
+    Attention Mechanism
+  </text>
+  
+  <!-- Q, K, V -->
+  <rect x="100" y="500" width="80" height="40" rx="5" fill="url(#attentionGrad)" opacity="0.8"/>
+  <text x="140" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+    Query (Q)
+  </text>
+  
+  <rect x="220" y="500" width="80" height="40" rx="5" fill="url(#attentionGrad)" opacity="0.8"/>
+  <text x="260" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+    Key (K)
+  </text>
+  
+  <rect x="340" y="500" width="80" height="40" rx="5" fill="url(#attentionGrad)" opacity="0.8"/>
+  <text x="380" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+    Value (V)
+  </text>
+  
+  <!-- Attention Formula -->
+  <text x="500" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#4a5568">
+    Attention(Q,K,V) = softmax(QK^T/d_k)V
+  </text>
+  
+  <!-- Arrows between Q, K, V -->
+  <path d="M 180 520 L 220 520" stroke="#4a5568" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 300 520 L 340 520" stroke="#4a5568" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 420 520 L 480 520" stroke="#4a5568" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+</svg>

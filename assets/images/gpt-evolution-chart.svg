@@ -1,0 +1,126 @@
+﻿<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#2d3748">
+    GPT Architecture Evolution
+  </text>
+  
+  <!-- GPT-2 Box -->
+  <rect x="50" y="100" width="200" height="150" rx="10" fill="url(#gradient1)" opacity="0.8"/>
+  <text x="150" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+    GPT-2
+  </text>
+  <text x="150" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
+    1.5B Parameters
+  </text>
+  <text x="150" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Decoder-only
+  </text>
+  <text x="150" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Causal Attention
+  </text>
+  <text x="150" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Layer Norm
+  </text>
+  
+  <!-- GPT-3 Box -->
+  <rect x="300" y="100" width="200" height="150" rx="10" fill="url(#gradient2)" opacity="0.8"/>
+  <text x="400" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+    GPT-3
+  </text>
+  <text x="400" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
+    175B Parameters
+  </text>
+  <text x="400" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Few-shot Learning
+  </text>
+  <text x="400" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    In-context Learning
+  </text>
+  <text x="400" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Scaling Laws
+  </text>
+  
+  <!-- GPT-4 Box -->
+  <rect x="550" y="100" width="200" height="150" rx="10" fill="#4facfe" opacity="0.8"/>
+  <text x="650" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+    GPT-4
+  </text>
+  <text x="650" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
+    ~1.7T Parameters
+  </text>
+  <text x="650" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Mixture of Experts
+  </text>
+  <text x="650" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Multimodal
+  </text>
+  <text x="650" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    RLHF
+  </text>
+  
+  <!-- Arrows -->
+  <path d="M 250 175 L 300 175" stroke="#4a5568" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 500 175 L 550 175" stroke="#4a5568" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a5568"/>
+    </marker>
+  </defs>
+  
+  <!-- Performance Chart -->
+  <rect x="50" y="300" width="700" height="250" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+  <text x="400" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2d3748">
+    Performance Comparison
+  </text>
+  
+  <!-- Chart bars -->
+  <rect x="100" y="400" width="80" height="80" fill="url(#gradient1)" opacity="0.7"/>
+  <text x="140" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a5568">
+    GPT-2
+  </text>
+  <text x="140" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">
+    Baseline
+  </text>
+  
+  <rect x="250" y="350" width="80" height="130" fill="url(#gradient2)" opacity="0.7"/>
+  <text x="290" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a5568">
+    GPT-3
+  </text>
+  <text x="290" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">
+    10x Better
+  </text>
+  
+  <rect x="400" y="300" width="80" height="180" fill="#4facfe" opacity="0.7"/>
+  <text x="440" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a5568">
+    GPT-4
+  </text>
+  <text x="440" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">
+    100x Better
+  </text>
+  
+  <!-- Y-axis label -->
+  <text x="30" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a5568" transform="rotate(-90, 30, 400)">
+    Performance
+  </text>
+  
+  <!-- X-axis label -->
+  <text x="400" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a5568">
+    Model Generation
+  </text>
+</svg>
