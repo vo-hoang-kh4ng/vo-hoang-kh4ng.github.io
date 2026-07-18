@@ -1,0 +1,104 @@
+baseURL = 'https://vo-hoang-kh4ng.github.io/'
+defaultContentLanguage = 'vi'
+title = 'Kh4ng'
+theme = 'PaperMod'
+
+[languages.vi]
+  languageName = 'Tiếng Việt'
+  languageCode = 'vi-VN'
+  weight = 1
+
+enableInlineShortcodes = true
+enableEmoji = true
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+pygmentsUseClasses = true
+
+[minify]
+  disableXML = true
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  env = 'production'
+  title = 'Kh4ng'
+  description = 'Blog cá nhân của Kh4ng — ghi chép về code, học tập và những suy nghĩ vụn vặt.'
+  keywords = ['Blog', 'Kh4ng', 'Lập trình', 'Cá nhân']
+  author = 'Kh4ng'
+  # images = ["images/og-image.png"]
+  DateFormat = '02-01-2006'
+  defaultTheme = 'auto'
+  disableThemeToggle = false
+  ShowShareButtons = false
+  ShowReadingTime = true
+  displayFullLangName = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  ShowToc = true
+  TocOpen = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = false
+  tocopen = false
+
+  [params.homeInfoParams]
+    Title = 'Chào mừng đến với blog của Kh4ng 👋'
+    Content = 'Đây là nơi mình ghi lại những gì học được về lập trình, công nghệ và một vài suy nghĩ cá nhân trên đường đi.'
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/vo-hoang-kh4ng'
+
+  [[params.socialIcons]]
+    name = 'rss'
+    url = '/index.xml'
+
+  [params.assets]
+    disableHLJS = true
+    # favicon = "favicon.ico"
+
+[menu]
+  [[menu.main]]
+    identifier = 'posts'
+    name = 'Bài viết'
+    url = '/posts/'
+    weight = 10
+  [[menu.main]]
+    identifier = 'archives'
+    name = 'Lưu trữ'
+    url = '/archives/'
+    weight = 20
+  [[menu.main]]
+    identifier = 'search'
+    name = 'Tìm kiếm'
+    url = '/search/'
+    weight = 30
+  [[menu.main]]
+    identifier = 'tags'
+    name = 'Tags'
+    url = '/tags/'
+    weight = 40
+  [[menu.main]]
+    identifier = 'about'
+    name = 'Giới thiệu'
+    url = '/about/'
+    weight = 50
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    style = 'monokai'
