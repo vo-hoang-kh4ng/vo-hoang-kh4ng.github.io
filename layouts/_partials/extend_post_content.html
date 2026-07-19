@@ -3,9 +3,19 @@
 </p>
 <script>
   window.addEventListener('load', function () {
-    if (window.goatcounter && window.goatcounter.visit_count) {
-      document.getElementById('goatcounter-count').textContent = '';
-      window.goatcounter.visit_count({ append: '#goatcounter-count', type: 'html', no_branding: true });
-    }
+    var el = document.getElementById('goatcounter-count');
+    var path = location.pathname;
+    fetch('https://kh4ng-blog.goatcounter.com/counter/' + encodeURIComponent(path).replace(/%2F/g, '/') + '.json')
+      .then(function (res) {
+        if (!res.ok) { throw new Error('no data'); }
+        return res.json();
+      })
+      .then(function (data) {
+        var count = (data.count || '0').replace(/[^\d]/g, '') || '0';
+        el.textContent = count + ' lượt xem';
+      })
+      .catch(function () {
+        el.textContent = 'Chưa có lượt xem';
+      });
   });
 </script>
