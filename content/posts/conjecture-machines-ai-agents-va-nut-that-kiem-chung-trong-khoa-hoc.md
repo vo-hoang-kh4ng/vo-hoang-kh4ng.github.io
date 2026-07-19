@@ -27,11 +27,17 @@ Báo cáo chỉ ra ba lực đẩy, xếp thành một kim tự tháp:
 2. **Scaffolding** — lớp "khung" bọc quanh model, cho nó bộ nhớ, khả năng gọi công cụ (chạy code, tra cứu literature, gọi các model chuyên biệt khác). Scaffolding đời đầu thường phải làm thủ công cho từng agent, khó tái sử dụng; các giao thức giao tiếp agent-với-agent mới đang giảm bớt gánh nặng này.
 3. **Customisation** — agent "skill": những tập lệnh dạng văn bản đơn giản, cho phép nhà khoa học "dạy" agent kiến thức ngầm (tacit knowledge) của riêng họ — thứ vốn khó truyền đạt bằng lời, chỉ tích luỹ qua năm tháng làm nghề.
 
+![Kim tự tháp 3 lực đẩy: Frontier model → Scaffolding → Customisation](/images/conjecture-machines/prontier-model.png)
+*Ba lớp làm nên một agent hữu ích, theo báo cáo: model nền càng mạnh, scaffolding càng tốt thì càng "khai thác" được nhiều năng lực tiềm ẩn, và customisation là lớp giúp agent hiểu tri thức ngầm riêng của từng nhà khoa học.*
+
 Có một câu nói của nhà khoa học tính toán Natasha Latysheva mình rất thích: *"Nghiên cứu khoa học sẽ chuyển từ thực thi trực tiếp sang điều phối ở tầm cao. Chúng ta sẽ bắt đầu ngày làm việc bằng cách xem lại những thí nghiệm agent chạy qua đêm."*
 
 ## Agent giỏi "nghĩ ra ý tưởng", nhưng không giỏi "chứng minh nó đúng"
 
 Đây là phần mình thấy đáng suy ngẫm nhất của báo cáo. Có ba giai đoạn trong một chu trình khoa học: **ideation** (nghĩ giả thuyết) → **tìm nghiệm tối ưu** → **validation** (kiểm chứng). Agent đang tạo ra bước nhảy vọt ở hai giai đoạn đầu, nhưng gần như chưa giúp gì nhiều ở giai đoạn cuối.
+
+![Sơ đồ chu trình khoa học 3 giai đoạn: ideation, tìm nghiệm tối ưu, validation](/images/conjecture-machines/validation.png)
+*Ba giai đoạn của một chu trình khoa học. Agent đang tạo bước nhảy vọt rõ rệt ở "ideation" và "tìm nghiệm tối ưu" — nhưng "validation" thì gần như vẫn giậm chân tại chỗ, vì phải chạm vào thực tế vật lý.*
 
 **Ideation:** Co-Scientist điều phối một dàn subagent để sinh ra nhiều giả thuyết, tự phản biện, xếp hạng, lặp lại — mô phỏng cách một nhóm nghiên cứu con người vận hành, nhưng ở tốc độ khác hẳn. Ví dụ thực tế: Gary Peltz (Stanford) tìm thuốc có thể tái sử dụng để trị xơ gan. Ông chọn 2 ứng viên dựa trên kinh nghiệm nhiều thập kỷ — không cái nào hiệu quả. Co-Scientist chọn 3 ứng viên — 2 trong số đó không chỉ chặn được xơ hoá mà còn thúc đẩy tái tạo tế bào gan.
 
