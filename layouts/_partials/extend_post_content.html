@@ -1,0 +1,11 @@
+<p class="post-view-count" style="color: var(--secondary); font-size: 14px; margin-top: 1em;">
+  <span id="goatcounter-count">Đang tải lượt xem…</span>
+</p>
+<script>
+  window.addEventListener('load', function () {
+    if (window.goatcounter && window.goatcounter.visit_count) {
+      document.getElementById('goatcounter-count').textContent = '';
+      window.goatcounter.visit_count({ append: '#goatcounter-count', type: 'html', no_branding: true });
+    }
+  });
+</script>
